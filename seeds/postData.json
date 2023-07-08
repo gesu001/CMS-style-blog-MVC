@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Sequelize",
+        "content": "Sequelize is a modern TypeScript and Node.js ORM for Oracle, Postgres, MySQL, MariaDB, SQLite and SQL Server, and more. Featuring solid transaction support, relations, eager and lazy loading, read replication and more.",
+        "user_id": 1
+    },
+    {
+        "title": "HTML",
+        "content": "The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser.",
+        "user_id": 2
+    }
+]
