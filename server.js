@@ -15,6 +15,9 @@ const sequelize = require('./config/connection');
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+// Import routes
+const routes = require('./controllers');
+
 //Initialize an instance of Express.js
 const app = express();
 
@@ -50,7 +53,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 
 // Static middleware pointing to the public folder; Using path.join(__dirname, 'public') will create an absolute path, using the directory where app.js is located as the base.
-app.use(express.static(path.join(_dirname, 'public')));
+// app.use(express.static(path.join(_dirname, 'public')));
 
 app.use(routes);
 
