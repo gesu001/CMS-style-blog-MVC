@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog</title>
+</head>
+<body>
+    <div>
+        <header>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/post">Dashboard</a>
+                <a href="/login">Login</a>
+                {{#if logged_in}}
+                <a href="/logout">Logout</a>
+                {{/if}}
+            </nav>
+        </header>
+        <main>
+            {{{ body }}}
+        </main>
+        <footer></footer>
+    </div>   
+    <script src="./js/comment.js"></script>
+</body>
+</html>

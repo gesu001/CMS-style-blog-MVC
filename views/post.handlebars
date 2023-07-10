@@ -1,0 +1,41 @@
+<div>
+    <div>
+        <h2>
+            {{title}}
+            <span>Created by {{user.username}} on {{ date_created }}</span>
+        </h2>
+    </div>
+    <div>
+        <p>
+            {{content}}
+        </p>
+    </div>
+</div>
+
+<div>
+    <div>
+        <h2>Comment</h2>
+         {{#each comments as |comment|}}
+        <p>
+            {{comment.content}}<br>
+            --{{comment.date_created}}
+        </p>
+         {{/each}}
+    </div>
+</div>
+{{#if logged_in}}
+<div>
+    <form class="new-comment-form">
+        {{!-- <div>
+            <legent>Add Comment</legent>
+        </div> --}}
+        <div class="mb-3">
+            <textarea class="form-control" id="comment" rows="3" placeholder="comment"></textarea>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Submit Comment</button>
+        </div>
+    </form>
+</div>
+{{/if}}
+
