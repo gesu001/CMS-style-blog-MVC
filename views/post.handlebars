@@ -12,18 +12,20 @@
     </div>
 </div>
 
+{{#if comments.length}}
 <div>
     <div>
         <h4>Comments:</h4>
          {{#each comments as |comment|}}
         <p>
             {{comment.content}}<br>
-            --{{comment.date_created}}
+            --{{comment.user_id}} at {{comment.date_created}}
         </p>
          {{/each}}
     </div>
+{{/if}}
 </div>
-{{#if logged_in}}
+{{!-- {{#if logged_in}} --}}
 <div>
     <form class="new-comment-form">
         {{!-- <div>
@@ -37,5 +39,5 @@
         </div>
     </form>
 </div>
-{{/if}}
+{{!-- {{/if}} --}}
 

@@ -45,13 +45,20 @@ router.get('/post/:id', async (req, res) => {
             ],
         });
         const post = postData.get({ plain: true });
-        console.log(post)
-        console.log(`hompage single:` + req.session)
-        console.log(req.session.logged_in)
+        // console.log(`post:` + post)
+        // console.log(`comment:` + comment)
+        // console.log(`hompage single:` + req.session)
+        // console.log(req.session.logged_in)
+        // console.log(req.session.user_id)
+// // retrieve the logged-in user's information
+//         const userId = req.session.user_id;
+//         const user = await User.findByPk(userId);
+//         const loginname = user.username;
+//         console.log(loginname)
 
         res.render('post', {
             ...post,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
         });
     } catch (err) {
         res.status(500).json(err);
@@ -80,6 +87,29 @@ router.get('/dashboard', withAuth, async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+  router.get('/update/:id', async (req, res) => {
+    try {
+        const postData = await Post.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User,
+                    attributes: ['username'],
+                },
+                {
+                    model: Comment
+                }
+            ],
+        });
+        const post = postData.get({ plain: true });
+        res.render('update', {
+            ...post,
+            logged_in: req.session.logged_in,
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 router.get('/login', (req, res) => {
     console.log(req.session)

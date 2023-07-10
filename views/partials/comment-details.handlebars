@@ -1,0 +1,6 @@
+{{#each comments as |comment|}}
+        <p>
+            {{comment.content}}<br>
+            --{{comment.user_id}} at {{comment.date_created}}
+        </p>
+         {{/each}}
