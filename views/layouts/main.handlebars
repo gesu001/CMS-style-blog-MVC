@@ -11,10 +11,12 @@
         <header>
             <nav>
                 <a href="/">Home</a>
+                {{#if logged_in}}
                 <a href="/dashboard">Dashboard</a>
+                {{/if}}
                 <a href="/login">Login</a>
                 {{#if logged_in}}
-                <a href="/logout">Logout</a>
+                <button class="no-button" id="logout">Logout</button>
                 {{/if}}
             </nav>
         </header>
@@ -24,6 +26,10 @@
         <footer></footer>
     </div>   
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <script src="./js/comment.js"></script>
+    
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    <script src="/js/comment.js"></script>
+    {{/if}}
 </body>
 </html>

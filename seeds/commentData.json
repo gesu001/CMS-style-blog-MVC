@@ -2,11 +2,11 @@
     {
         "content": "It is often assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.",
         "date_created": "09/07/2023",
-        "post_id": "2"
+        "post_id": 2
     },
     {
         "content": "Models are the essence of Sequelize. A model is an abstraction that represents a table in your database. In Sequelize, it is a class that extends Model.",
         "date_created": "09/07/2023",
-        "post_id": "1"
+        "post_id": 1
     }
 ]

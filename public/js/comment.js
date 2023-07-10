@@ -2,23 +2,24 @@ const newCommentHandler = async (event) => {
     event.preventDefault();
 
     const content = document.querySelector('#comment').value.trim();
+    //const elm = document.querySelector('#post-title');
+    const post_id = document.querySelector('#post-title').dataset.id;
     console.log(content);
-    // const created_at = day.js().format('DD/MM/YYYY');
-    console.log(created_at)
+    console.log(post_id);
     if (content) {
         const response = await fetch('/api/comments', {
             method: 'POST',
-            body:JSON.stringify({ content }),
+            body:JSON.stringify({ content, post_id }),
             headers: {
                 'Content-Type': 'application/json'
             },
         });
         console.log(response)
-        // if (response.ok) {
-        //     document.location.reload();
-        // } else {
-        //     alert('Failed to add comment')
-        // }
+        if (response.ok) {
+            document.location.reload();
+        } else {
+            alert('Failed to add comment')
+        }
     }
 };
 
