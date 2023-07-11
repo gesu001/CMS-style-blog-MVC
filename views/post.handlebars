@@ -2,7 +2,7 @@
     <div>
         <h2 id="post-title" data-id="{{id}}">
             {{title}}
-            <span>Created by {{user.username}} on {{ date_created }}</span>
+            <span>Created by {{user.username}} on {{format_date date_created}}</span>
         </h2>
     </div>
     <div>
@@ -19,7 +19,7 @@
          {{#each comments as |comment|}}
         <p>
             {{comment.content}}<br>
-            --{{comment.user_id}} at {{comment.date_created}}
+            -- at {{format_date comment.date_created}}
         </p>
          {{/each}}
     </div>
