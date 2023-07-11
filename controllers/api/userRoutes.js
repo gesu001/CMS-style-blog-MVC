@@ -4,8 +4,6 @@ const { User } =require('../../models');
 router.post('/', async (req, res) => {
     try {
         const userData = await User.create(req.body);
-        console.log(req.session)
-        console.log(`uses/` + req.session.user_id)
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
@@ -31,8 +29,6 @@ router.post('/login', async (req, res) => {
 
         const validPassword = await userData.checkPassword(req.body.password);
 
-        console.log(`validPassword:` + validPassword);
-
         if (!validPassword) {
             res.status(400).json({ message: 'Incorrect username or password, please try again' });
             return;
@@ -44,8 +40,7 @@ router.post('/login', async (req, res) => {
 
             res.json({ user: userData, message: 'You are now logged in!'});
         });
-        console.log(req.session)
-        console.log('login:' + req.session.user_id)
+
     } catch (err) {
         res.status(400).json(err);
     }
