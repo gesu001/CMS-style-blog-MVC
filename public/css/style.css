@@ -1,0 +1,33 @@
+body {
+  padding: 20px;
+  font-family: Arial;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+}
+
+a {
+  color: var(--dark);
+  text-decoration: none;
+}
+
+header {
+  padding: 10px;
+  text-align: center;
+}
+
+main {
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+}
+
+nav a {
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
