@@ -5,7 +5,7 @@
 ## Description
 
 This CMS-style tech blog is a full stack application that allows users to view, create, update, delete blogs and comments. MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
-Please visit the application [here]().
+Please visit the application [here](https://thawing-coast-62894-926b880ed03c.herokuapp.com/).
 
 ## Table of Contents
 
